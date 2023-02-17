@@ -48,22 +48,28 @@ for (x=9;x<19;x++){
   console.log(nn)
   ids.push(nn)
 }
-for (var y=0;y<ids.length;y++){
-  ids[y] = document.querySelector("#"+ids[y])
-  console.log(ids[i])}
+//for (var y=0;y<ids.length;y++){
+
+    
+function sel(y) {
+  ids[y] = document.querySelector("#"+ids[y]);
+  console.log(ids[y])
+  ids[y].addEventListener("click",function(event){
+    console.log(this.id);})}
 //hour10 = document.querySelector("#hour-10")
 //function query () {
 /*timeBlocks.addEventListener("click", function(event) {
     var props = event.target.id;
     console.log(props);*/
    // var current;
-var i=0;
-function click (){
-  ids[i].addEventListener("click",function(event){
-    console.log(ids[i]);
-    i++;
-    if (i<ids.length){
-      click();}})}
+//var i=0;
+//function click (){
+  
+  
+for (var l =0;l<ids.length;l++){
+  sel(l);
+  console.log(ids[l].id)
+}
 /*
 while (i<6){
   ids[i];
@@ -72,5 +78,4 @@ while (i<6){
   ids[i].addEventListener("click",function(event){
   now = ids[i].id;
   console.log(ids[i]);
-  i=i+1;
-   }
+  i=i+1*/
