@@ -1,15 +1,64 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-//const dayjs = require('dayjs')
-//import dayjs from 'dayjs' // ES 2015
-document.querySelector("#currentDay").textContent = "Today, " + dayjs().format('dddd, MMMM D, YYYY')
-//var hr = dayjs().format('h');
-hr=1;
-if (hr<12){
-  hr=hr+12;
-}
 
+document.querySelector("#currentDay").textContent = "Today, " + dayjs().format('dddd, MMMM D, YYYY')
+var hr = dayjs().format('h');
+console.log(hr);
+assign();
+
+//Assigns the class to each time block dependent on the current hour
+function assign(){
+  console.log("Assign started.")
+  for (var x=9; x < 19;x++) {
+  //var curr = ("hour-"+x).toString
+  //console.log(curr);
+  var identified=document.getElementById("hour-"+x)
+  console.log(identified);
+    if (x<hr){
+      identified.classList.add("past")}
+      else if (x==hr){
+        identified.classList.add("present")}
+        else{
+          identified.classList.add("future")
+        }
+    }
+  }
+ identify();
+  var id;
+  function identify(){
+    
+  }
+/*var ids = [];
+for (x=9;x<19;x++){
+  nn = "hour-" + x;
+  console.log(nn);
+  ids.push(nn);}
+
+var i=0;
+function clicker (){
+  ids[i].addEventListener("click",function(event){
+    console.log(ids[i]);
+    i++;
+    if (i<ids.length){
+      clicker();}})}*/
+/*var timeBlocks = document.querySelector("#hour-10")
+//function query () {
+timeBlocks.addEventListener("click", function(event) {
+    var props = event.target.id;
+    console.log(props);
+});
+
+x=5;
+*/
+ /*var id;
+$('body').on('click', '*', function() {
+
+  id = $(this).attr('id');
+  console.log(id); 
+  console.log(id.split('-'))
+});
+console.log(id.split('-'))*/
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -29,54 +78,38 @@ if (hr<12){
   //
   // TODO: Add code to display the current date in the header of the page.
 //};
-var times=[];
-var ids = [];
+
+/*var ids = [];
 for (x=9;x<19;x++){
   nn = "hour-" + x;
-  console.log(nn);
-  times.push(x);
+  console.log(nn)
   ids.push(nn)
 }
-console.log(times);
-function sel(y) {
-  ids[y] = document.querySelector("#"+ids[y]);
-  console.log(ids[y])
-  ids[y].addEventListener("click",function(event){
-    //identification = this.id;
-    console.log(this.id);})}
-  
-for (var l =0;l<ids.length;l++){
-  sel(l);
-  console.log(ids[l].id)
-}
+for (var y=0;y<ids.length;y++){
+  ids[y] = document.querySelector("#"+ids[y])
+  console.log(ids[i])}
+//hour10 = document.querySelector("#hour-10")
+//function query () {
+/*timeBlocks.addEventListener("click", function(event) {
+    var props = event.target.id;
+    console.log(props);*/
+   // var current;
+/*var i=0;
+function click (){
+  ids[i].addEventListener("click",function(event){
+    console.log(ids[i]);
+    i++;
+    if (i<ids.length){
+      click();}})}*/
 
-var block;
-var bk;
-if (8<hr<19) {
-for (var b=0;b<ids.length;b++){
-    //found = times.indexOf(hr);
-    hey = document.getElementById(ids[1]);
-    console.log(hey)
-    block = document.getElementById(ids[b]);
-    console.log(block)
-    bk = times[b];
-    console.log(bk);
-    if (hr == bk) {
-      block.classList.add("present");
-    } else if (hr > bk) {
-      block.classList.add("past");
-   } else {
-    block.classList.add("future");
-    }  
+//console.log(x)
 
-}}
-else if (hr<9) {
-  for (var b=0;b<ids.length;b++){
-  block = document.getElementById(ids[b]);
-  block.classList.add("future");
-  }
-} else{
-  for (var b=0;b<ids.length;b++){
-    block = document.getElementById(ids[b]);
-    block.classList.add("past");
-}}
+/*
+while (i<6){
+  ids[i];
+  ids[i] = document.querySelector("#"+ids[i])
+  console.log(ids[i])
+  ids[i].addEventListener("click",function(event){
+  now = ids[i].id;
+  console.log(ids[i]);
+  i=i+1*/
