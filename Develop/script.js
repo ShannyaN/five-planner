@@ -24,24 +24,33 @@ function assign(){
         }
     }
   }
- identify();
-  var id;
-  function identify(){
-    
-  }
-/*var ids = [];
+
+var ids = [];
 for (x=9;x<19;x++){
   nn = "hour-" + x;
   console.log(nn);
   ids.push(nn);}
 
-var i=0;
+/*var i=0;
 function clicker (){
   ids[i].addEventListener("click",function(event){
     console.log(ids[i]);
     i++;
     if (i<ids.length){
-      clicker();}})}*/
+      clicker();}})}
+
+clicker();*/
+var ide=[];
+var i=0;
+while (i<6){
+  ide[i] = document.querySelector("#"+ids[i])
+  console.log(ids[i])
+  console.log(ide[i])
+  ide[i].addEventListener("click",function(event){
+  now = ide[i].id;
+  console.log(ide[i]);
+  i=i+1})}
+
 /*var timeBlocks = document.querySelector("#hour-10")
 //function query () {
 timeBlocks.addEventListener("click", function(event) {
