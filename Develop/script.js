@@ -1,11 +1,8 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
-
 document.querySelector("#currentDay").textContent = "Today, " + dayjs().format('dddd, MMMM D, YYYY')
-var hr = dayjs().format('h');
+var hr = dayjs().format('H');
 console.log(hr);
 assign();
+var idn = [];
 
 //Assigns the class to each time block dependent on the current hour
 function assign(){
@@ -25,32 +22,27 @@ function assign(){
     }
   }
 
-var ids = [];
+
+ /*identify();
+  var id;
+  function identify(){
+    
+  }*/
+//  var x = document.getElementById("myLi").parentNode;
+//alert(x.id);
+/*var ids = [];
 for (x=9;x<19;x++){
   nn = "hour-" + x;
   console.log(nn);
   ids.push(nn);}
 
-/*var i=0;
+var i=0;
 function clicker (){
   ids[i].addEventListener("click",function(event){
     console.log(ids[i]);
     i++;
     if (i<ids.length){
-      clicker();}})}
-
-clicker();*/
-var ide=[];
-var i=0;
-while (i<6){
-  ide[i] = document.querySelector("#"+ids[i])
-  console.log(ids[i])
-  console.log(ide[i])
-  ide[i].addEventListener("click",function(event){
-  now = ide[i].id;
-  console.log(ide[i]);
-  i=i+1})}
-
+      clicker();}})}*/
 /*var timeBlocks = document.querySelector("#hour-10")
 //function query () {
 timeBlocks.addEventListener("click", function(event) {
@@ -88,12 +80,15 @@ console.log(id.split('-'))*/
   // TODO: Add code to display the current date in the header of the page.
 //};
 
-/*var ids = [];
-for (x=9;x<19;x++){
-  nn = "hour-" + x;
+var ids = [];
+for (var y = 9;y<19;y++){
+  nn = "hour-" + y;
   console.log(nn)
   ids.push(nn)
 }
+
+//buttListen();
+/*
 for (var y=0;y<ids.length;y++){
   ids[y] = document.querySelector("#"+ids[y])
   console.log(ids[i])}
@@ -111,14 +106,47 @@ function click (){
     if (i<ids.length){
       click();}})}*/
 
-//console.log(x)
+//console.log(x))
 
-/*
-while (i<6){
-  ids[i];
-  ids[i] = document.querySelector("#"+ids[i])
-  console.log(ids[i])
-  ids[i].addEventListener("click",function(event){
-  now = ids[i].id;
-  console.log(ids[i]);
-  i=i+1*/
+
+/*function buttListen(){
+  console.log("hey")
+  for (var i=0; i<ids.length;i++){
+    console.log(curr);
+    idn[i] = document.querySelector(ids[i]);
+    console.log(idn[i])
+    idn[i].addEventListener("click",function(event)){
+}
+
+function identify(){
+  console.log(this.id)}*/
+var currentID;
+var writeID = function() {
+  console.log(this.id)
+  currentID = this.id;
+  currentEl=document.getElementById(currentID);
+  console.log(currentEl);
+  plannedCon = currentEl.childNodes[3].value;
+  window.localStorage.setItem(currentID,plannedCon)
+
+    //document.getElementById(currentID).textContent)
+}
+for (var i=0; i<ids.length;i++){
+ document.getElementById(ids[i]).onclick = writeID;}
+  //document.getElementById(ids[0]).onclick = writeID*/
+
+var txtArea =  document.querySelectorAll(".description")
+  console.log(txtArea)
+var saveButts = document.querySelectorAll(".saveBtn");
+/*saveButts.onclick = yo();
+function yo (){
+  console.log("hey")
+}
+*/
+for (var r=0; r<saveButts.length;r++){
+  saveButts[r].addEventListener("click",function(event){
+    writeID();
+   
+    //
+  })
+}
